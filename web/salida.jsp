@@ -5,7 +5,7 @@
 --%>
 <%@page import="com.emergentes.modelo.Encuesta"%>
 <%
-Encuesta encu=(Encuesta)request.getAttribute("miEncu");
+    Encuesta encu = (Encuesta) request.getAttribute("miEncu");
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -20,15 +20,16 @@ Encuesta encu=(Encuesta)request.getAttribute("miEncu");
         <p>y los lenguajes de su preferencia son:</p>
         <ul>
             <%
-            String [] lenguajes=encu.getLenguaje();
-            if(lenguajes!=null){
-                for(int i=0;i<lenguajes.length;i++){
-                    %>
-                    <li><%= lenguajes[i] %></li>
-                    <%
-                }
-            }
+                String[] lenguajes = encu.getLenguaje();
+                if (lenguajes != null) {
+                    for (int i = 0; i < lenguajes.length; i++) {
             %>
+            <li><%= lenguajes[i]%></li>
+                <%
+                        }
+                    }
+                %>
         </ul>
+        <a href="index.jsp" >Volver</a>
     </body>
 </html>
